@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav__left">
+          <div class="nav__left--logo">
+            <img src="./assets/images/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="nav__right">
+          <div class="nav__right--toggle">
+            <button class="mode-btn">
+              <img
+                src="./assets/images/icon-moon.svg"
+                alt=""
+                class="img active"
+              />
+              <img src="./assets/images/icon-sun.svg" alt="" class="img" />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div class="extension-list">
+        <div class="extension-list__left">
+          <p class="extension-list__heading">Extensions List</p>
+        </div>
+        <div class="extension-list__right">
+          <div class="extension-list__right--ctas">
+            <button class="cta-btn" data-status="all">All</button
+            ><button class="cta-btn" data-status="active">Active</button
+            ><button class="cta-btn" data-status="inactive">Inactive</button>
+          </div>
+        </div>
+      </div>
+
+      <main class="screen"></main>
+    </div>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

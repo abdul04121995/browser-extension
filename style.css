@@ -1,0 +1,191 @@
+:root {
+  --Neutral-600: hsl(0, 0%, 78%);
+  --toggle-bg: hsl(217, 61%, 90%);
+  /* --bg-color: hsl(0, 0%, 93%); */
+  --bg-color: hsl(200, 60%, 99%);
+  --color: black;
+  --Red-400: hsl(3, 86%, 64%);
+  --Red-500: hsl(3, 71%, 56%);
+  --Red-700: hsl(3, 77%, 44%);
+  --border-color: hsl(226, 25%, 17%);
+  --Gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --grid-gap: 0.5rem;
+}
+
+.dark-mode {
+  --color: white;
+  --Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  /* --bg-color: hsl(227, 75%, 14%); */
+  --bg-color: hsl(226, 25%, 17%);
+  --border-color: hsl(200, 60%, 99%);
+  --toggle-bg: hsl(225, 23%, 24%);
+  --Neutral-600: hsl(226, 11%, 37%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./assets/fonts/static/NotoSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Noto Sans Bold";
+  src: url("./assets/fonts/static/NotoSans-Bold.ttf");
+}
+body {
+  background: var(--Gradient);
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: var(--color);
+  font-family: "Noto Sans";
+}
+button {
+  line-height: 1;
+  font-family: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.container {
+  width: min(1240px, 90%);
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+/* styling nav bar */
+.nav {
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 9px;
+  box-shadow: 0px 0px 5px black;
+}
+.nav__right {
+  margin-left: auto;
+}
+.nav__left--logo {
+  color: white;
+}
+/*  styling dark mode button */
+.mode-btn {
+  position: relative;
+  width: 2rem;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: var(--toggle-bg);
+  border-radius: 9px;
+}
+.img {
+  position: absolute;
+  display: none;
+}
+.img.active {
+  display: block;
+}
+/* styling extension list */
+
+.extension-list {
+  margin-top: 2rem;
+  display: flex;
+}
+.extension-list__heading {
+  font-family: "Noto Sans Bold";
+  font-size: clamp(1.6rem, 0.8vw + 0.7rem, 2.5rem);
+}
+.extension-list__right {
+  margin-left: auto;
+}
+.cta-btn {
+  color: inherit;
+  background-color: var(--bg-color);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 19px;
+  cursor: pointer;
+  /* background-color: var(--Neutral-800); */
+}
+.cta-btn:focus {
+  outline: var(--Red-700);
+}
+
+.cta-btn:not(:last-child) {
+  margin-right: 0.5rem;
+}
+/* styling screen element */
+
+.screen {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--grid-gap);
+}
+.card {
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 9px;
+  background-color: var(--bg-color);
+  /* animation: fade 1s linear; */
+}
+.card__top {
+  display: flex;
+}
+.card__top__logo {
+  margin-right: 0.5rem;
+}
+.card__bottom {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  border-radius: 29px;
+  color: var(--color);
+
+  border: 1px solid var(--border-color);
+}
+.remove {
+  background-color: transparent;
+  padding: 0.4rem 0.6rem;
+}
+.toggle-btn {
+  width: 3rem;
+  height: 1.5rem;
+  position: relative;
+  background-color: var(--toggle-bg);
+}
+.toggle-btn > span {
+  position: absolute;
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: rgb(236, 230, 230);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  transition: left 0.5s linear;
+}
+.toggle-btn.active {
+  background-color: var(--Red-700);
+}
+.toggle-btn > span.active {
+  left: 50%;
+}
+@keyframes fade {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
