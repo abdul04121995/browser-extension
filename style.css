@@ -94,6 +94,7 @@ img {
 .extension-list {
   margin-top: 2rem;
   display: flex;
+  align-items: center;
 }
 .extension-list__heading {
   font-family: "Noto Sans Bold";
@@ -138,6 +139,11 @@ img {
 }
 .card__top__logo {
   margin-right: 0.5rem;
+  flex: 1 0 3rem;
+}
+.card img {
+  width: 3.75rem;
+  aspect-ratio: 1;
 }
 .card__bottom {
   margin-top: 1.5rem;
@@ -148,6 +154,7 @@ img {
 .btn {
   border-radius: 29px;
   color: var(--color);
+  cursor: pointer;
 
   border: 1px solid var(--border-color);
 }
@@ -166,7 +173,7 @@ img {
   display: inline-block;
   width: 1.3rem;
   height: 1.3rem;
-  background-color: rgb(236, 230, 230);
+  background-color: rgb(187, 164, 164);
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -179,6 +186,19 @@ img {
 .toggle-btn > span.active {
   left: 50%;
 }
+
+@media screen and (max-width: 499px) {
+  .extension-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .extension-list__right {
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+}
+
 @keyframes fade {
   0% {
     transform: translateY(-10px);
